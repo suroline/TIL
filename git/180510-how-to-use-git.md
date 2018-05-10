@@ -45,7 +45,7 @@ cd .. -> higher dir // cd./ -> where i am // .. -> cd [dir name] -> move to file
 - step 5. $ git push origin master
 - final: you can check your index.html in github.io 
 
-### use gitbuh as your own storage 
+### use github as your own storage 
 - step 1. $ rm -rf your directory
 - step 2. $ git clone https://github.com/username/directory-name.git
 - final: by saving version in your github can be used like cloud system.
