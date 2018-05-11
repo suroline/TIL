@@ -17,16 +17,16 @@
 ## Protocol 
 
 - These days use TCP/IP Protocol
-    [Application Protocol]
-    HTTP
-    FTP
-    SMTP send / IMAP get
+    >Application Protocol
+    >HTTP
+    >FTP
+    >SMTP send / IMAP get
 
-    [Transport Protocol]
-    TCP/IP
-    TCP : transfer safly, orderly, with no error
-    STREAM : TCP
-    DATAGRAM : UDP -> online game
+    >Transport Protocol
+    >TCP/IP
+    >TCP : transfer safly, orderly, with no error
+    >STREAM : TCP
+    >DATAGRAM : UDP -> online game
 
-    [IP]
-    
+    >IP
+
