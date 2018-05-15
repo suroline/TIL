@@ -1,0 +1,108 @@
+/* 
+The CSS float property specifies how an element should float.
+Clear property specifies what elements can float beside the cleared element and on which side.
+Clear: both; -> - No floating elements allowed on either the left or the right side
+.clearfix::after{
+  content:"";
+  display: block;
+  clear: both;
+} 
+it makes trick if it looks like the float elements are in its parents element.
+
+url: https://www.w3schools.com/css/css_float.asp
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(245, 245, 245);
+  margin: auto;
+  font-size: 16px;
+}
+
+.wrapper {
+  background: rgb(196, 196, 196);
+}
+
+.header, .visual, .main, .slogan, .footer {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.header {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
+
+.visual {
+  background: rgb(14, 20, 94);
+  height: 20vh;
+}
+
+.main {
+  background: rgb(238, 174, 0);
+  height: 50vh;
+  padding: 30px 15px;
+}
+
+
+.clearfix::after{
+  content:"";
+  display: block;
+  clear: both;
+} 
+
+.group_box {
+  width: 1100px;
+
+  /* margin-left: -50px; */
+
+}
+
+.group {
+  background: rgb(245, 245, 245);
+  height: 40vh;
+  float: left;
+  margin: 0 15px;
+
+  /* 
+  border-color: black;
+  border-style: inherit; 
+  */
+  
+}
+
+.group1 { 
+  width: 310px;
+
+}
+
+.group2 {
+  width: 260px;
+
+}
+
+.group3 {
+  width: 350px;
+  
+  
+  /* Q. 박스 사이즈를 보더박스로 하면 보더값에 영향이 있나요?
+  border: 1 solid rgb(59, 59, 59); */
+
+}
+
+.slogan {
+  background: rgb(14, 20, 94);
+  height: 10vh;
+}
+
+.footer {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
+
+.footer_bg {
+  background-color: rgba(255, 255, 255, 0.377);
+}

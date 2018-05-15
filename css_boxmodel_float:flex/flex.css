@@ -1,0 +1,105 @@
+/* 
+display: flex;
+Parent Element (Container)
+The flex container becomes flexible by setting the display property to flex
+  - flex-direction row / column / row-reverse / column-reverse
+  - flex-wrap
+
+url: https://www.w3schools.com/css/css3_flexbox.asp
+*/
+
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(245, 245, 245);
+  margin: auto;
+  font-size: 16px;
+}
+
+.wrapper {
+  background: rgb(196, 196, 196);
+}
+
+.header, .visual, .main, .slogan, .footer {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.header {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
+
+.visual {
+  background: rgb(14, 20, 94);
+  height: 20vh;
+}
+
+.main {
+  background: rgb(238, 174, 0);
+  height: 50vh;
+  padding: 30px 0;
+  
+}
+
+
+.group_box {
+  width: 1100px;
+
+  margin-left: -80px;
+
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.group {
+  background: rgb(245, 245, 245);
+  height: 40vh;
+
+ 
+
+  /* 
+  border-color: black;
+  border-style: inherit; 
+  */
+  
+}
+
+.group1 { 
+  width: 310px;
+
+}
+
+.group2 {
+  width: 260px;
+
+}
+
+.group3 {
+  width: 350px;
+  
+  
+  /* Q. 박스 사이즈를 보더박스로 하면 보더값에 영향이 있나요?
+  border: 1 solid rgb(59, 59, 59); */
+
+}
+
+.slogan {
+  background: rgb(14, 20, 94);
+  height: 10vh;
+}
+
+.footer {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
+
+.footer_bg {
+  background-color: rgba(255, 255, 255, 0.377);
+}

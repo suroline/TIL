@@ -1,0 +1,58 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(245, 245, 245);
+  margin: auto;
+  font-size: 16px;
+}
+
+.wrapper {
+  background: rgb(196, 196, 196);
+}
+
+.header, .visual, .main, .slogan, .footer {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.header {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
+
+.visual {
+  background: rgb(14, 20, 94);
+  height: 20vh;
+}
+
+.main {
+  background: rgb(238, 174, 0);
+  height: 50vh;
+}
+
+.group1 {
+  background: rgb(245, 245, 245);
+  width: 150px;
+}
+
+.group2 {
+  background: rgb(245, 245, 245);
+  width: 500px;
+}
+
+.group3 {
+  background: rgb(245, 245, 245);
+  width: 150px;
+}
+
+.slogan {
+  background: rgb(14, 20, 94);
+  height: 10vh;
+}
+
+.footer {
+  background: rgb(32, 32, 32);
+  height: 10vh;
+}
