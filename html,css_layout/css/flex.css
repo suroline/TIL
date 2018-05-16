@@ -1,0 +1,157 @@
+/* all reset */
+
+@import url("normalize.css");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fff;
+  font-size: 16px;
+
+  color: rgb(18, 18, 18);
+}
+
+h2 {
+ font-size: 1em;
+}
+
+/* hidden contents */
+
+.readable-hidden {
+  position: absolute;
+  left: -9999em;
+}
+
+/* body */
+
+.wrapper {
+  background-color: rgb(255, 174, 0);
+}
+
+/* header */
+
+.header, .visual, .main, .slogan, .footer {
+  width: 940px;
+  /* 야매로 중간에 넣은 것 */
+  margin: 0 auto;
+}
+
+.header {
+  background: rgb(240, 240, 240);
+  padding: 30px;
+  /* 자식 중에 포지션을 쓰기 때문에 포지션에 static 외에 다른걸 넣어줌. */
+  position: relative;
+}
+
+/* logo */
+
+.logo{
+  position: absolute;
+  top: 80px;
+  left: 65px;
+}
+
+
+/* members link */
+
+.members{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.members li {
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+.members li a {
+  padding: 5px 20px;
+}
+
+.members li:nth-child(n+2)::before{
+  content: ":";
+}
+
+/* ad: visual */
+
+.visual {
+  background: rgb(0, 153, 77);
+  height: 10vh;
+}
+
+/* main */
+
+.main {
+  background: rgb(0, 97, 224);
+  padding: 30px 15px;
+}
+
+.clearfix::after {
+  content: "";
+  background-color: #000;
+  color: #fff;
+  /* clear은 float랑도 쓰지만 무조건 display가 block이 되어야 함. inline인지 아닌지 확인이 꼭 필요 */
+  display: block;
+  clear: both;
+}
+
+
+.group {
+  height: 30vh;
+  float: left;
+  margin: 0 15px;
+}
+
+.group1 {
+  background-color: rgba(141, 141, 141, 0.8);
+  float: left;
+  width: 250px;
+}
+
+.group2 {
+  background-color: hsla(1, 48%, 64%, 0.5);
+  float: left;
+  width: 380px;
+ 
+}
+
+.group3 {
+  background-color: tomato;
+  width: 190px;
+}
+
+.slogan {
+  background: rgb(103, 50, 153);
+  height: 10vh;
+  /* float랑 겹쳐진것 만 강제 마진을 주는 것: block속성에서만 쓸 수 있음 */
+  clear: both;
+}
+
+.footer {
+  background: rgb(19, 19, 19);
+  height: 10vh;
+  color: rgb(241, 241, 241);
+
+}
+
+.footer-bg {
+  background: grey;
+}
