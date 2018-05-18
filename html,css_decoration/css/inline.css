@@ -1,0 +1,262 @@
+/* all reset */
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("normalize.css");
+@import url("fontello.css");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fff;
+  font-size: 16px;
+  font-family: 'Spoqa Han Sans';
+  color: rgb(18, 18, 18);
+}
+
+html {
+  font-size: 10px;
+}
+
+
+
+/* hidden contents */
+/* 1. using position: absolute and hide it by placing it left side */
+
+
+.readable-hidden {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  left: -9999em;
+  /* unless if it gets wrong by the clip code */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+} 
+
+/* 
+need to find out at weekand
+.readable-hidden {
+  clip-path: ???? ;
+}
+ */
+
+
+
+/* body */
+
+.wrapper {
+  background-color: rgb(214, 214, 214);
+  background-image: url(images/bg_flower.png);
+  background-repeat: no-repeat;
+  background-position: 50 0;
+  background-attachment: fixed;
+}
+
+/* header */
+
+.header, .visual, .main, .slogan, .footer {
+  width: 940px;
+  /* 야매로 중간에 넣은 것 */
+  margin: 0 auto;
+}
+
+.header {
+  background: rgb(240, 240, 240);
+  padding: 30px;
+  /* 로고: 자식 중에 포지션을 쓰기 때문에 포지션에 static 외에 다른걸 넣어줌. */
+  position: relative;
+}
+
+/* logo */
+
+.logo{
+  position: absolute;
+  top: 80px;
+  left: 65px;
+}
+
+
+/* members link : using display: inline-block */
+
+.members {
+  /* background-color: rgb(184, 184, 184); */
+  text-align: right;
+  /* 잉글리시를 뒤에 맞출려고 */
+  font-size: 0;
+  padding: 10px 0;
+  position: relative;
+  right: -10px;
+  
+}
+
+.members li {
+  /* li가 inline 이기 때문에 inline-block을 통해 마진과 패딩값을 넣음 */
+  display: inline-block;
+  background-color: rgba(47, 28, 151, 0.822);
+  margin: 0;
+  padding: 0 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  
+}
+
+.members li a {
+  background-color: rgb(54, 46, 46);
+  display: inline-block;
+  padding: 5px 30px;
+}
+
+
+.members li:nth-child(n+2)::before{
+  content: ":";
+  background-color: rgb(255, 196, 0);
+  
+}
+
+/* main category */
+
+.menu {
+  background-color: rgb(172, 172, 172);
+  border-top: 2px solid rgb(18, 18, 18);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 1px 0 rgb(214, 214, 214);
+  font-weight: 500;
+  padding-left: 225px;
+  height: 47px;
+}
+
+.menu-item {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 48px;
+  left: 0px;
+  white-space: nowrap;
+}
+
+.sub-menu li {
+  /* list inline */
+  display: inline-block;
+  /* 
+  Q. 리스트가 아닌 앵커에 걸은 이유가 따로 있나요?
+  margin-right: 10px;
+  padding: 5px 5px 7px 0;
+   */
+}
+
+.sub-menu a {
+  /* for margin */
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 5px 7px 0;
+}
+
+.sub-menu a::before {
+  font-family: "fontello";
+  content: '\f192';
+}
+
+.sub-menu a:hover::before {
+  content: '\e800';
+}
+
+
+
+
+
+
+
+
+
+/* ad: visual */
+
+.visual {
+  background: rgb(0, 153, 77);
+  height: 10vh;
+}
+
+/* main */
+
+.main {
+  background: rgb(0, 97, 224);
+  padding: 30px 15px;
+}
+
+.clearfix::after {
+  content: "";
+  background-color: #000;
+  color: #fff;
+  /* clear은 float랑도 쓰지만 무조건 display가 block이 되어야 함. inline인지 아닌지 확인이 꼭 필요 */
+  display: block;
+  clear: both;
+}
+
+
+.group {
+  height: 30vh;
+  float: left;
+  margin: 0 15px;
+}
+
+.group1 {
+  background-color: rgba(141, 141, 141, 0.8);
+  float: left;
+  width: 250px;
+  
+}
+
+.group2 {
+  background-color: hsla(1, 48%, 64%, 0.5);
+  float: left;
+  width: 380px;
+ 
+}
+
+.group3 {
+  background-color: tomato;
+  width: 190px;
+}
+
+.slogan {
+  background: rgb(103, 50, 153);
+  height: 10vh;
+  /* float랑 겹쳐진것 만 강제 마진을 주는 것: block속성에서만 쓸 수 있음 */
+  clear: both;
+}
+
+h2 {
+  font-size: 1em;
+ }
+
+.footer {
+  background: rgb(19, 19, 19);
+  height: 10vh;
+  color: rgb(241, 241, 241);
+
+}
+
+.footer-bg {
+  background: grey;
+}
