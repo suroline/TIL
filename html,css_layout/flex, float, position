@@ -1,0 +1,17 @@
+When to use flex, float, position.
+
+Actually always when you want. But when it is related to Service operating, i need to think about which one is the best solution for the next when i'll do some update.
+
+1. flex
+
+- always great, but new function so some internet browser doesnt work well.
+
+2. float
+
+- it is good to use when the inside of the contents can get longer. It's  because i can use clear:both; and make a block at the bottom. It will keep the parent height.
+
+3. position
+
+- when i won't have any content's that will be updated, it is useful and easy.
+
+Also I have grid-layout function, but its still updating so i need to keep follow does updating. 
