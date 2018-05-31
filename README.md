@@ -1,12 +1,10 @@
 # TIL
-Today i learned,
+Today i learned posting place.
 
-how to use git and github
-also learning to use visual studio code 
+Going to upload what i studied daily. 
 
-i will commit everyday what i learned.
-
-4 month schedule what i am planning to learn
+3 month schedule what i am planning to learn
+- git
 - HTML5/CSS3
 - Javascript
 - Angular.js
