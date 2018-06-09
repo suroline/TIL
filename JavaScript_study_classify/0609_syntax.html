@@ -1,0 +1,57 @@
+<!-- Hello JavaScript: Internal  -->
+<!--  
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello World</title> 
+  <style>
+    button {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading"></h1>
+  <button id="my-btn">click me!</button>
+
+  <script>
+    var heading = document.getElementById('heading');
+    var myButton = document.getElementById('my-btn');
+
+    myButton.addEventListener('click', function() {
+      heading.innerHTML = 'Hello World!';
+    });
+
+  </script>
+</body>
+</html>
+-->
+
+<!-- Hello JavaScript: External -->
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello World</title>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <h1 id="heading"></h1>
+  <button id="my-btn">click-me</button>
+  <!-- insert js file on the bottom inside of the body part : in case of the DOM error & page loading speed -->
+  <script src="main.js"></script>
+  <!--  
+  <script async src="main.js"></script> 
+  <script defer src="main.js"></script>
+  -->
+</body>
+</html>
+
+
+
