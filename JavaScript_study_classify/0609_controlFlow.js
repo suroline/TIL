@@ -115,21 +115,43 @@ for (var i =0; i < arr.length; i++) {
   console.log('[' + i + ']' + arr[i]);
 }
 
+// for-in : loop all the property of object
+
 for (var i in arr) {
   console.log('['+ i + '] = ' + arr[i]); 
 }
+
+for (var prop in person) {
+  console.log(prop + ': ' + person[prop]); // first-name: Lee, age: 50, sayHello: function() {console.log('Hi ' + this['first-name']);}
+}
+
+var array = ['one', 'two'];
+
+array.name = 'my arr';
+
+for (var idx in array) {
+  console.log(idx + ': ' + array[idx]); // 0: one, 1: two, name: my arr
+}
+
 
 arr.forEach(function (ele, idx, arr) {
   console.log('[' + idx + '] = ' + ele);
 });
 
-for (const element of arr) {
-  console.log(element); //for-of : ES6
+// for-of : loop all the array of the object
+
+const arr = [1, 2, 3];
+arr.name = 'my arr'
+
+for (const value of arr) {
+  console.log(value); //for-of : ES6
 }
 
 for (const [idx, value] of arr.entries()) {
   console.log('[' + idx + '] = ' + value);
 }
+
+
 
 var n = 0;
 var x = 0;
