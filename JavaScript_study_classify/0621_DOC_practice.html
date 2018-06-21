@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>todo list</title>
+</head>
+<body>
+  <input type="text" placeholder="todo list">
+  <button class="input-btn">ADD</button>
+  <ul>
+    <!-- <li><span>list 1</span><button>DEL</button></li> -->
+    <!-- <li><span>list 2</span><button>DEL</button></li> -->
+    <!-- <li><span>list 3</span><button>DEL</button></li> -->
+    <li> <input type="checkbox" checked> <span>list 3</span><button>DEL</button></li>
+
+  </ul>
+
+  <script>
+  
+  var inputBtn = document.querySelector('.input-btn');
+  var todo = document.querySelector('input');
+  var list = document.querySelector('ul');
+
+  console.log(inputBtn);
+  console.log(todo);
+  console.log(list);
+  
+  inputBtn.addEventListener('click', function () {
+    //console.log(inputBtn);
+    //console.log(todo);
+    if (!todo.value) return;
+    list.innerHTML += '<li><input type="checkbox" checked><span>' + todo.value + '</span><button>DEL</button></li>';
+    todo.value = '';
+  }
+  )
+
+  todo.addEventListener('keyup', function(e) {
+    //console.log(e);
+    
+    if (!this.value || e.keyCode !== 13) return;
+    
+    list.innerHTML += '<li><input type="checkbox" checked><span>' + this.value + '</span><button>DEL</button></li>';
+    this.value = '';
+  })
+
+  list.addEventListener('click', function (e) {
+    //console.log(e.target.parentNode); 
+    //console.log(e.target.nodeName); // BUTTON
+    if (e.target.nodeName !== 'BUTTON') return;
+    list.removeChild(e.target.parentNode);
+  })
+
+  
+  </script>
+</body>
+</html>
