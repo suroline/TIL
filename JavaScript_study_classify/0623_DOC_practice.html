@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo List</title>
+</head>
+<body>
+  <input type="text" placeholder="write list what to do">
+  <button class="add-btn">ADD</button>
+
+  <ul></ul>
+
+  <script>
+  
+  // 공통으로 쓰이는 변수
+
+  var todos = [];
+
+  var addBtn = document.querySelector('.add-btn');
+  var todoInput = document.querySelector('input');
+  var list = document.querySelector('ul');
+  
+  
+
+  // innerHTML로 데이터를 화면에 보이게 하는 함수
+
+  function showUp () {
+    return todos.forEach(function(todo){
+      //console.log('todo.id');
+      var checked = todo.completed ? 'checked' : '';
+      list.innerHTML += '<li id="'+ todo.id +'"><input type="checkbox" class="check-box"'+ checked +'><span>' + todo.content + '</span><button class="del-btn">DEL</button></li>'
+    })
+  }
+
+  
+  // 리스트 삭제 : 리스트를 담은 객체 변수를 만들어서, 리스트 내 버튼 엘리먼트를 forEach 로 찾아서 그 버튼을 누를 시, 삭제 하는 방법
+
+  function deleteList () {
+    
+    var listArr = document.querySelectorAll('li');
+
+    return listArr.forEach(function(todoDone){
+      
+      var delBtn = todoDone.getElementsByTagName('BUTTON');
+     
+      delBtn[0].addEventListener('click', function(e) {
+        //console.log(e.target.parentNode);
+        e.target.parentNode.outerHTML = "";
+        console.log(todos);
+        
+        todos = todos.filter(function(todo){
+          return todo.id !== +e.target.parentNode.id;
+        })
+        console.log(todos);
+        
+       });
+    });
+  }
+
+  
+
+ 
+
+  
+  //데이터를 가져와서, html로 보이게 하기 
+
+  window.addEventListener('load', function(){
+
+    // 스트링으로 가져온 데이터를 빈 객체 todos에 넣음
+
+    todos = [ 
+      { id: 1, content: 'HTML5', completed: true },
+      { id: 2, content: 'CSS3', completed: true },
+      { id: 3, content: 'JavaScript', completed: false },
+      { id: 4, content: 'Angular', completed: false }
+    ];
+
+    
+    // 빈 객체 todos에 넣은 데이터값을 화면에 보이게 함 
+
+    showUp ();
+
+    
+    // DEL 버튼 누를 시, todos에서 삭제 
+    
+    deleteList ();
+
+
+    // done : 체크박스 클릭 시, 투두스에 있는 completed가 변경되게 함 이거슨 왜 안되는 것인가..!
+
+    var listArr = document.querySelectorAll('li');
+
+    listArr.forEach(function(done){
+      
+      var checkBtn = done.getElementsByTagName('INPUT');
+      //console.log(checkBtn);
+
+      checkBtn[0].addEventListener('click', function(e){
+        console.log(e.target)
+        return todos.map(function(todo){
+          return todo.id === e.target.id ? Object.assign({}, todo, {completed: !todo.completed}) : todo ;
+        });
+      })
+    })
+
+    console.log(todos);
+  
+  });
+
+  
+  
+  // todolist를 add 버튼 클릭 시, 리스트 상단에 보여지게 한다. (input.value -> todos 상단에 concat 시키고, 그걸 innerHTML로 보이기)
+  
+  addBtn.addEventListener('click', function(){
+
+    var arr = todos.map(function(arrID) {
+      return arrID.id;
+    })
+
+    var maxID = Math.max.apply(null, arr);
+   
+    // todos 에 데이터 추가 하기
+    todos = todos.concat({id: maxID+1, content: todoInput.value, completed: false});
+    
+    console.log(todos);
+    
+    // 추가한 데이터를 html로 보여주기 : 질문 왜 todos.id로 안나오나
+    list.innerHTML = '<li id="' + todos.id + '"><input type="checkbox" class="check-box"' + '><span>' + todoInput.value + '</span><button class="del-btn">DEL</button></li>' + list.innerHTML;
+    
+    console.log(todos);
+
+    // DEL 버튼 누를 시, todos에서 삭제 
+
+    deleteList ();
+   
+  });
+
+ 
+
+  
+  
+  
+  </script>
+  
+</body>
+</html>
